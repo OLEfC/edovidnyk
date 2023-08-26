@@ -130,11 +130,13 @@
             iconSize: [25, 41],
             iconAnchor: [12, 41],
             popupAnchor: [1, -34],
-          })
+          }),
+          name:markerData.name
         }).addTo(map);
 
-        marker.bindPopup(markerData.name);
+        marker.bindPopup(markerData.adress);
         markers.push(marker);
+        
       });
     }
 
@@ -151,18 +153,20 @@
     }
 
     var markersData = [
-  { name: 'Comfy', latlng: { lat: 49.8122586, lng: 23.9775488 }, city: 'Львів' },
-  { name: 'Comfy', latlng: { lat: 49.8493254, lng: 24.0219017 }, city: 'Львів' },
-  { name: 'Comfy', latlng: { lat: 49.87031589999999, lng: 24.022944 }, city: 'Львів' },
-  { name: 'Foxtrot', latlng: { lat: 50.4501, lng: 30.5234 }, city: 'Київ' },
-  { name: 'Foxtrot', latlng: { lat: 49.8435466, lng: 24.0229822 }, city: 'Львів' },
-  { name: 'Foxtrot', latlng: { lat: 49.8498827, lng: 24.0223092 }, city: 'Львів' },
-  { name: 'Foxtrot', latlng: { lat: 49.8560791, lng: 24.0212206 }, city: 'Львів' },
-  { name: 'Foxtrot', latlng: { lat: 49.8141538, lng: 24.061762 }, city: 'Львів' },
-  { name: 'Foxtrot', latlng: { lat: 49.8073364, lng: 23.9788109 }, city: 'Львів' },
-  { name: 'Foxtrot', latlng: { lat: 49.8093341, lng: 23.9981256 }, city: 'Львів' },
-  { name: 'Foxtrot', latlng: { lat: 49.7734874, lng: 24.0100473 }, city: 'Львів' },
-  { name: 'Foxtrot', latlng: { lat: 49.7919607, lng: 24.0574058 }, city: 'Львів' },
+  { name: 'Comfy', latlng: { lat: 49.8122586, lng: 23.9775488 }, city: 'Львів' ,adress:"вулиця Івана Виговського, 100, Львів, Львівська область, 79000"},
+  { name: 'Comfy', latlng: { lat: 49.8493254, lng: 24.0219017 }, city: 'Львів',adress:"вулиця Під Дубом, 7Б, Львів, Львівська область, 79000" },
+  { name: 'Comfy', latlng: { lat: 49.87031589999999, lng: 24.022944 }, city: 'Львів',adress:"вулиця Гетьмана Мазепи, 1Б, Львів, Львівська область, 79000"  },
+  { name: 'Foxtrot', latlng: { lat: 50.4501, lng: 30.5234 }, city: 'Київ',adress:"10, Heneral, Vorobyov St, Київ"  },
+  { name: 'Foxtrot', latlng: { lat: 49.8435466, lng: 24.0229822 }, city: 'Львів' ,adress:"вулиця Городоцька, 16, Львів, Львівська область, 79000" },
+  { name: 'Foxtrot', latlng: { lat: 49.8498827, lng: 24.0223092 }, city: 'Львів' ,adress:"вулиця Під Дубом, 7Б, Львів, Львівська область, 79000" },
+  { name: 'Foxtrot', latlng: { lat: 49.8560791, lng: 24.0212206 }, city: 'Львів' ,adress:"проспект В'ячеслава Чорновола, 57, Львів, Львівська область, 79000" },
+  { name: 'Foxtrot', latlng: { lat: 49.8141538, lng: 24.061762 }, city: 'Львів' ,adress:"вулиця Зелена, 147/1, Львів, Львівська область, 79000" },
+  { name: 'Foxtrot', latlng: { lat: 49.8073364, lng: 23.9788109 }, city: 'Львів' ,adress:"вул. Кульпарківська, 226, Львів, Львівська область, 79000" },
+  { name: 'Comfy', latlng: { lat: 49.8073364, lng: 23.9788109 }, city: 'Львів' ,adress:"вул. Кульпарківська, 226, Львів, Львівська область, 79000" },
+
+  { name: 'Foxtrot', latlng: { lat: 49.8093341, lng: 23.9981256 }, city: 'Львів' ,adress:"Новий ЦУМ, вулиця Княгині Ольги, 106, Львів, Львівська область, 79000" },
+  { name: 'Foxtrot', latlng: { lat: 49.7734874, lng: 24.0100473 }, city: 'Львів' ,adress:"вул. Стрийська, 30, Сокільники, Львівська область, 79011" },
+  { name: 'Foxtrot', latlng: { lat: 49.7919607, lng: 24.0574058 }, city: 'Львів' ,adress:"проспект Червоної Калини, 62, Львів, Львівська область, 79000" },
   // Add more store data
 ];
 
@@ -210,10 +214,10 @@ function centerMapOnCity(cityName) {
       hideMarkers();
 
       markers.forEach(function(marker) {
-        if (selectedStores.includes(marker.getPopup().getContent())) {
-          map.addLayer(marker);
-        }
-      });
+      if (selectedStores.includes(marker.options.name)) {
+        map.addLayer(marker);
+      }
+    });
     }
 
     var checkboxes = document.querySelectorAll('.checkboxesmenu input[name="storeCheckbox"]');
