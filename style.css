@@ -13,6 +13,7 @@ body {
 
 .headnav {
     background-color: #FEAEAE;
+
 }
 
 .headnav nav {
@@ -21,6 +22,7 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 70px;
+    width:100%;
 }
 
 .headnav li {
