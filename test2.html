@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Knowledge Test</title>
+    
+    <style>
+        body{
+            background-color: #FFCFB2;
+
+        }
+    
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .correct-answer {
+            background-color: #11ff00;
+            color: #fff;
+        }
+
+        .incorrect-answer {
+            background-color: #FF5733;
+            color: #fff;
+        }
+        select{
+            font-size: 20px;
+
+
+        }
+        .labeltest{
+            font-size: 15px;
+            font-weight: normal;
+        }
+        .question{
+            margin: 5px 10px;
+        }
+        #submitButton{
+            font-size: 25px;
+            width: fit-content;
+            border-radius: 20px;
+            margin: 10px 30px;
+            background-color: #91ff89;
+
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="question">
+        <p>1. Яка основна функція CPU?</p>
+        <label><input type="radio" name="q1" value="correct">Обробка даних</label>
+        <label><input type="radio" name="q1" value="incorrect">Передача даних</label>
+        <label><input type="radio" name="q1" value="incorrect">Ввід даних</label>
+        <label><input type="radio" name="q1" value="incorrect">Вивід даних</label>
+
+        
+    </div>
+
+    <div class="question">
+        <p>2. Що означає RAM?</p>
+        <label><input type="radio" name="q2" value="correct">Оперативна пам'ять</label>
+        <label><input type="radio" name="q2" value="incorrect">Пам'ять тільки для читання</label>
+        <label><input type="radio" name="q2" value="incorrect">Постійна пам'ять</label>
+        <label><input type="radio" name="q2" value="incorrect">Зовнішна пам'ять</label>
+
+
+    </div>
+
+    <div class="question">
+        <p>3. Який компонент відповідає за відображення зображень на екрані комп'ютера?</p>
+        <label><input type="radio" name="q3" value="correct">Відеокарта</label>
+        <label><input type="radio" name="q3" value="incorrect">Жорсткий диск</label>
+        <label><input type="radio" name="q3" value="incorrect">Процесор</label>
+        <label><input type="radio" name="q3" value="incorrect">Мережева карта</label>
+
+
+    </div>
+
+    <div class="question">
+        <p>4. Для чого потрібна операційна система?</p>
+        <label><input type="radio" name="q4" value="correct">Управління ресурсами апаратного та програмного забезпечення</label>
+        <label><input type="radio" name="q4" value="incorrect">Перегляд інтернету</label>
+        <label><input type="radio" name="q4" value="incorrect">Зберігання даних</label>
+
+    </div>
+
+    <div class="question">
+        <p>5. Що означає CPU?</p>
+        <label><input type="radio" name="q5" value="correct">Центральний процесор</label>
+        <label><input type="radio" name="q5" value="incorrect">Блок живлення комп'ютера</label>
+        <label><input type="radio" name="q5" value="incorrect">Графічний процесор</label>
+
+    </div>
+
+    <div class="question">
+        <p>6. Які компоненти відповідають за відображення зображень на екрані комп'ютера? (Виберіть всі варіанти)</p>
+        <label><input type="checkbox" name="q6" value="correct">Відеокарта</label>
+        <label><input type="checkbox" name="q6" value="correct">Монітор</label>
+        <label><input type="checkbox" name="q6" value="incorrect">Клавіатура</label>
+    </div>
+
+    <div class="question">
+        <p>7. Введіть повну форму CPU (англійською):</p>
+        <input type="text" name="q7" id="q7-answer">
+    </div>
+
+    <div class="question">
+        <p>8. Що означає RAM? (Виберіть один варіант)</p>
+        <select name="q8">
+            <option value="incorrect">Пам'ять тільки для читання</option>
+            <option value="correct">Оперативна пам'ять</option>
+            <option value ="incorrect">Оперативний монітор доступу</option>
+            <option value ="incorrect">Пам'ять для читання доступу</option>
+        </select>
+    </div>
+
+    <button id ="submitButton">Надіслати відповіді</button>
+    <p id ="result"></p>
+
+
+
+    <script>
+        
+    
+        document.getElementById("submitButton").addEventListener("click", function () {
+    const questions = document.querySelectorAll(".question");
+    let correctAnswers = 0;
+
+    questions.forEach((question) => {
+        if (question.querySelector("input[type=radio]:checked") || question.querySelector("input[type=checkbox]:checked")) {
+            const answers = question.querySelectorAll("input[type=radio]:checked, input[type=checkbox]:checked");
+            const correctAnswersCount = question.querySelectorAll("input[type=radio][value='correct']:checked, input[type=checkbox][value='correct']:checked").length;
+
+            if (answers.length === correctAnswersCount) {
+                question.classList.remove("incorrect-answer");
+                question.classList.add("correct-answer");
+                correctAnswers++;
+            } else {
+                question.classList.remove("correct-answer");
+                question.classList.add("incorrect-answer");
+            }
+        } else if (question.querySelector("input[type=text]")) {
+            const userAnswer = document.getElementById("q7-answer").value.trim().toLowerCase();
+            if (userAnswer === "central processing unit") {
+                question.classList.remove("incorrect-answer");
+                question.classList.add("correct-answer");
+                correctAnswers++;
+            } else {
+                question.classList.remove("correct-answer");
+                question.classList.add("incorrect-answer");
+            }
+        } else if (question.querySelector("select")) {
+            const select = question.querySelector("select");
+            const selectedOption = select.options[select.selectedIndex];
+            if (selectedOption.value === "correct") {
+                question.classList.remove("incorrect-answer");
+                question.classList.add("correct-answer");
+                correctAnswers++;
+            } else {
+                question.classList.remove("correct-answer");
+                question.classList.add("incorrect-answer");
+            }
+        }
+    });
+
+    const resultElement = document.getElementById("result");
+    resultElement.textContent = `Your score: ${correctAnswers} out of ${questions.length}`;
+});
+
+    </script>
+    
+</body>
+</html>

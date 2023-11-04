@@ -5,6 +5,24 @@
     <title>Єдовідник</title> 
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+    <script>
+        // Видалення всіх товарів
+        document.querySelector('.deleteproduct').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('.comparelist').innerHTML = '';
+        });
+    
+        // Видалення конкретного товару
+        let deleteButtons = document.querySelectorAll('.deleteproductone');
+        deleteButtons.forEach(function(button) {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                this.closest('.comparelistelement').remove();
+            });
+        });
+    </script>
+    
+
 </head>
 <body class="compare" >
     <header>
@@ -27,33 +45,65 @@
         </div>
     </header>
 
+    <form class="compareform" action="search.html">
+        <button class="addproduct" type="submit">+ Додати товар </button>
+        <button class="deleteproduct"><img src="trash.png">Видалити усі товари</button>
+    </form>
+
 
     <main>
         <h2>Обрані товари</h2>
         <div class="comparelist">
             <div class="comparelistelement"> 
-                <div class="comparephoto">
-                    <img src="compare test.png" alt="">
+                <div class="maincompare">
+                    <div class="comparephoto">
+                        <img src="compare test.png" alt="">
+                        
+                      
+    
+                    </div>
+                    
+                    <h1>Ноутбук Lenovo IdeaPad 5 15IAL7</h1>
 
                 </div>
-                
-                <h1>Ноутбук Lenovo IdeaPad 5 15IAL7</h1>
+               
+                <form class="deleteproductform" action="search.html">
+                    <button class="deleteproductone"><img src="trash.png">Видалити товар</button>
+                </form>
+            </div>
+
+
+            <div class="comparelistelement"> 
+                <div class="maincompare">
+                    <div class="comparephoto">
+                        <img src="compare test2.png" alt="">
+    
+                    </div>
+                    
+                    <h1>Процесор AMD Ryzen 5 7600X</h1>
+
+                </div>
+                <form class="deleteproductform" action="search.html">
+                    <button class="deleteproductone"><img src="trash.png">Видалити товар</button>
+                </form>
+
+               
             </div>
             <div class="comparelistelement"> 
-                <div class="comparephoto">
-                    <img src="compare test2.png" alt="">
+                <div class="maincompare">
+                    <div class="comparephoto">
+                        <img src="compare test3.png" alt="">
+    
+                    </div>
+                    
+                    <h1>Відеокарта Gigabyte RTX 3060 Gaming OC 12GB</h1>
 
                 </div>
                 
-                <h1>Процесор AMD Ryzen 5 7600X</h1>
-            </div>
-            <div class="comparelistelement"> 
-                <div class="comparephoto">
-                    <img src="compare test3.png" alt="">
 
-                </div>
-                
-                <h1>Відеокарта Gigabyte RTX 3060 Gaming OC 12GB</h1>
+                <form class="deleteproductform" action="search.html">
+                    <button class="deleteproductone"><img src="trash.png">Видалити товар</button>
+                </form>
             </div>
             
             

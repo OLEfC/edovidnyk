@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Knowledge Test</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-color: #FFCFB2;
+
+        }
+    
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .correct-answer {
+            background-color: #11ff00;
+            color: #fff;
+        }
+
+        .incorrect-answer {
+            background-color: #FF5733;
+            color: #fff;
+        }
+        select{
+            font-size: 20px;
+
+
+        }
+        .labeltest{
+            font-size: 15px;
+            font-weight: normal;
+        }
+        .question{
+            margin: 5px 10px;
+        }
+        #submitButton{
+            font-size: 25px;
+            width: fit-content;
+            border-radius: 20px;
+            margin: 10px 30px;
+            background-color: #91ff89;
+
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="question">
+        <p>1. What is the primary function of a CPU?</p>
+        <label class="labeltest" ><input type="radio" name="q1" value="correct">Processing data</label>
+        <label class="labeltest" ><input type="radio" name="q1" value="incorrect">Printing documents</label>
+    </div>
+
+    <div class="question">
+        <p>2. What does RAM stand for?</p>
+        <label class="labeltest" ><input type="radio" name="q2" value="correct">Random Access Memory</label>
+        <label class="labeltest" ><input type="radio" name="q2" value="incorrect">Read-Only Memory</label>
+    </div>
+
+    <div class="question">
+        <p>3. Which component is responsible for displaying images on a computer screen?</p>
+        <label class="labeltest" ><input type="radio" name="q3" value="correct">Graphics Card</label>
+        <label class="labeltest" ><input type="radio" name="q3" value="incorrect">Hard Drive</label>
+    </div>
+
+    <div class="question">
+        <p>4. What is the purpose of an operating system?</p>
+        <label class="labeltest" ><input type="radio" name="q4" value="correct">Managing hardware and software resources</label>
+        <label class="labeltest" ><input type="radio" name="q4" value="incorrect">Browsing the internet</label>
+    </div>
+
+    <div class="question">
+        <p>5. What does CPU stand for?</p>
+        <label class="labeltest" ><input type="radio" name="q5" value="correct">Central Processing Unit</label>
+        <label class="labeltest" ><input type="radio" name="q5" value="incorrect">Computer Power Unit</label>
+    </div>
+
+    <div class="question">
+        <p>6. Which components are responsible for displaying images on a computer screen? (Select all that apply)</p>
+        <label class="labeltest" ><input type="checkbox" name="q6" value="correct">Graphics Card</label>
+        <label class="labeltest" ><input type="checkbox" name="q6" value="correct">Monitor</label>
+        <label class="labeltest" ><input type="checkbox" name="q6" value="incorrect">Keyboard</label>
+    </div>
+
+    <div class="question">
+        <p>7. Enter the full form of CPU:</p>
+        <input type="text" name="q7" id="q7-answer">
+    </div>
+
+    <div class="question">
+        <p>8. What does RAM stand for? (Select one option)</p>
+        <select name="q8">
+            <option value="incorrect">Read-Only Memory</option>
+            <option value="correct">Random Access Memory</option>
+            <option value="incorrect">Random Access Monitor</option>
+            <option value="incorrect">Read-Access Memory</option>
+        </select>
+    </div>
+
+    <button id="submitButton">Submit Answers</button>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("submitButton").addEventListener("click", function () {
+            const questions = document.querySelectorAll(".question");
+            let correctAnswers = 0;
+
+
+            questions.forEach((question) => {
+                if (question.querySelector("input[type=radio]") || question.querySelector("input[type=checkbox]")) {
+                    const answers = question.querySelectorAll("input[type=radio]:checked, input[type=checkbox]:checked");
+                    const correctAnswersCount = question.querySelectorAll("input[type=radio][value='correct'], input[type=checkbox][value='correct']").length;
+                    
+                    if (answers.length === correctAnswersCount) {
+                        question.classList.remove("incorrect-answer");
+                        question.classList.add("correct-answer");
+                        correctAnswers++;
+                    } else {
+                        question.classList.remove("correct-answer");
+                        question.classList.add("incorrect-answer");
+                    }
+                } else if (question.querySelector("input[type=text]")) {
+                    const userAnswer = document.getElementById("q7-answer").value.trim().toLowerCase();
+                    if (userAnswer === "central processing unit") {
+                        question.classList.remove("incorrect-answer");
+                        question.classList.add("correct-answer");
+                        correctAnswers++;
+                    } else {
+                        question.classList.remove("correct-answer");
+                        question.classList.add("incorrect-answer");
+                    }
+                } else if (question.querySelector("select")) {
+                    const select = question.querySelector("select");
+                    const selectedOption = select.options[select.selectedIndex];
+                    if (selectedOption.value === "correct") {
+                        question.classList.remove("incorrect-answer");
+                        question.classList.add("correct-answer");
+                        correctAnswers++;
+                    } else {
+                        question.classList.remove("correct-answer");
+                        question.classList.add("incorrect-answer");
+                    }
+                }
+            });
+
+            const resultElement = document.getElementById("result");
+            resultElement.textContent = `Your score: ${correctAnswers} out of ${questions.length}`;
+        });
+    </script>
+</body>
+</html>

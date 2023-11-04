@@ -7,79 +7,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/nouislider@14/distribute/nouislider.min.css" rel="stylesheet">
     <style>
-        #slider {
+        .slider {
             width: 240px;
             margin-top: 10px;
             margin-left: 20px;
             background-color: #F9EEEB;
             border-radius: 40px;
         }
-        #slider2 {
-            width: 240px;
-            margin-top: 10px;
-            margin-left: 20px;
-            background-color: #F9EEEB;
-            border-radius: 40px;
-        }
-        #slider3 {
-            width: 240px;
-            margin-top: 10px;
-            margin-left: 20px;
-            background-color: #F9EEEB;
-            border-radius: 40px;
-        }
-
-        #slider4 {
-            width: 240px;
-            margin-top: 10px;
-            margin-left: 20px;
-            background-color: #F9EEEB;
-            border-radius: 40px;
-        }
-
-        #slider5 {
-            width: 240px;
-            margin-top: 10px;
-            margin-left: 20px;
-            background-color: #F9EEEB;
-            border-radius: 40px;
-        }
-        #slider6 {
-            width: 240px;
-            margin-top: 10px;
-            margin-left: 20px;
-            background-color: #F9EEEB;
-            border-radius: 40px;
-        }
-        #slider7 {
-            width: 240px;
-            margin-top: 10px;
-            margin-left: 20px;
-            background-color: #F9EEEB;
-            border-radius: 40px;
-        }
-        #slider8 {
-            width: 240px;
-            margin-top: 10px;
-            margin-left: 20px;
-            background-color: #F9EEEB;
-            border-radius: 40px;
-        }
-        #slider9 {
-            width: 240px;
-            margin-top: 10px;
-            margin-left: 20px;
-            background-color: #F9EEEB;
-            border-radius: 40px;
-        }
-
-        #slider10 {
-            width: 240px;
-            margin-top: 10px;
-            margin-left: 20px;
-            background-color: #F9EEEB;
-            border-radius: 40px;
-        }
+        
        
         .slider-inputs input {
             width: 50px;
@@ -173,7 +108,7 @@
                     <select class="dropdownitem" name="name" id="id">
 
                         <option value="1">Intel</option>
-                        <option value="2">AMD</option>
+                        <option valu e="2">AMD</option>
                   
                       
                     </select>
@@ -189,22 +124,22 @@
                 <form >
                     
                     <div class="checkboxesmenu">
-                        <input  type="checkbox" id="textcheck1" name="textcheck1" value="Bike">
+                        <input  type="checkbox" id="textcheck1" name="textcheck1" >
                         <label for="textcheck1"> Intel Core I5</label><br>
 
                     </div>
                     <div class="checkboxesmenu">
-                        <input type="checkbox" id="textcheck2" name="textcheck2" value="Car">
+                        <input type="checkbox" id="textcheck2" name="textcheck2" >
                         <label  for="textcheck2">Intel Core I7</label><br>
 
                     </div>
                     <div class="checkboxesmenu">
-                        <input type="checkbox" id="textcheck3" name="textcheck3" value="Boat">
+                        <input type="checkbox" id="textcheck3" name="textcheck3" >
                         <label for="textcheck3">AMD Ryzen 7</label><br>
                     </div>
                     <div class="checkboxesmenu">
                         
-                        <input type="checkbox" id="textcheck4" name="textcheck4" value="Boat">
+                        <input type="checkbox" id="textcheck4" name="textcheck4" >
                         <label for="textcheck4">AMD Ryzen 9</label> <br>
 
                     </div>
@@ -222,7 +157,7 @@
                 
                 <h2 class="subtitle" style="margin-left: 34px;">Кількість ядер</h2>
 
-                <div id="slider"></div>
+                <div id="slider" class="slider"></div>
 
                 <div class="slider-inputs">
                     <input type="number" id="input-left" step="1" min="2" max="12" style="margin-left: 20px; margin-top: 20px;text-align: center;">
@@ -274,7 +209,7 @@
                 
                 <h2 class="subtitle" style="margin-left: 34px;">Кількість потоків</h2>
 
-                <div id="slider2"></div>
+                <div id="slider2" class="slider"></div>
 
                 <div class="slider-inputs">
                     <input type="number" id="input-left2" step="1" min="2" max="24" style="margin-left: 20px; margin-top: 20px;text-align: center;">
@@ -307,12 +242,12 @@
                         }
                     });
 
-                    inputLeft.addEventListener('change', function () {
+                    inputLeft2.addEventListener('change', function () {
                         var value = this.value;
                         slider2.noUiSlider.set([value, null]);
                     });
 
-                    inputRight.addEventListener('change', function () {
+                    inputRight2.addEventListener('change', function () {
                         var value = this.value;
                         slider2.noUiSlider.set([null, value]);
                     });
@@ -329,17 +264,17 @@
                 <form >
                     
                     <div class="checkboxesmenu">
-                        <input  type="checkbox" id="textcheck5" name="textcheck5" value="Bike">
+                        <input  type="checkbox" id="textcheck5" name="textcheck5" >
                         <label for="textcheck5"> Arm</label><br>
 
                     </div>
                     <div class="checkboxesmenu">
-                        <input type="checkbox" id="textcheck6" name="textcheck6" value="Car">
+                        <input type="checkbox" id="textcheck6" name="textcheck6" >
                         <label  for="textcheck6">x64</label><br>
 
                     </div>
                     <div class="checkboxesmenu">
-                        <input type="checkbox" id="textcheck7" name="textcheck7" value="Boat">
+                        <input type="checkbox" id="textcheck7" name="textcheck7" >
                         <label for="textcheck7">x86</label><br>
                     </div>
                    
@@ -390,22 +325,22 @@
                     <form >
                         
                         <div class="checkboxesmenu">
-                            <input  type="checkbox" id="textcheck8" name="textcheck8" value="Bike">
+                            <input  type="checkbox" id="textcheck8" name="textcheck8" >
                             <label for="textcheck8"> GeForse GT710</label><br>
 
                         </div>
                         <div class="checkboxesmenu">
-                            <input type="checkbox" id="textcheck9" name="textcheck9" value="Car">
+                            <input type="checkbox" id="textcheck9" name="textcheck9" >
                             <label  for="textcheck9">GeForse GTX1650</label><br>
 
                         </div>
                         <div class="checkboxesmenu">
-                            <input type="checkbox" id="textcheck10" name="textcheck10" value="Boat">
+                            <input type="checkbox" id="textcheck10" name="textcheck10" >
                             <label for="textcheck10">GeForse GTX1650 Ti</label><br>
                         </div>
                         <div class="checkboxesmenu">
                             
-                            <input type="checkbox" id="textcheck11" name="textcheck11" value="Boat">
+                            <input type="checkbox" id="textcheck11" name="textcheck11" >
                             <label for="textcheck11">GeForse GTX1660</label> <br>
 
                         </div>
@@ -425,12 +360,12 @@
                     <form >
                         
                         <div class="checkboxesmenu">
-                            <input  type="checkbox" id="textcheck12" name="textcheck12" value="Bike">
+                            <input  type="checkbox" id="textcheck12" name="textcheck12" >
                             <label for="textcheck12"> Дискретна</label><br>
 
                         </div>
                         <div class="checkboxesmenu">
-                            <input type="checkbox" id="textcheck13" name="textcheck13" value="Car">
+                            <input type="checkbox" id="textcheck13" name="textcheck13" >
                             <label  for="textcheck13">Інтегрована</label><br>
 
                         </div>
@@ -448,7 +383,7 @@
                 
                 <h2 class="subtitle" style="margin-left: 34px;">Тактова частота  ГГц</h2>
 
-                <div id="slider3"></div>
+                <div id="slider3" class="slider"></div>
 
                 <div class="slider-inputs">
                     <input type="number" id="input-left3" step="0.1" min="1.8" max="5" style="margin-left: 20px; margin-top: 20px;text-align: center;">
@@ -481,12 +416,12 @@
                         }
                     });
 
-                    inputLeft.addEventListener('change', function () {
+                    inputLeft3.addEventListener('change', function () {
                         var value = this.value;
                         slider3.noUiSlider.set([value, null]);
                     });
 
-                    inputRight.addEventListener('change', function () {
+                    inputRight3.addEventListener('change', function () {
                         var value = this.value;
                         slider3.noUiSlider.set([null, value]);
                     });
@@ -527,22 +462,22 @@
                 <form >
                     
                     <div class="checkboxesmenu">
-                        <input  type="checkbox" id="textcheck14" name="textcheck14" value="Bike">
+                        <input  type="checkbox" id="textcheck14" name="textcheck14" >
                         <label for="textcheck14"> DDR3</label><br>
 
                     </div>
                     <div class="checkboxesmenu">
-                        <input type="checkbox" id="textcheck15" name="textcheck15" value="Car">
+                        <input type="checkbox" id="textcheck15" name="textcheck15" >
                         <label  for="textcheck15">DDR5</label><br>
 
                     </div>
                     <div class="checkboxesmenu">
-                        <input type="checkbox" id="textcheck16" name="textcheck16" value="Car">
+                        <input type="checkbox" id="textcheck16" name="textcheck16" >
                         <label  for="textcheck16">DDR3L</label><br>
 
                     </div>
                     <div class="checkboxesmenu">
-                        <input type="checkbox" id="textcheck16" name="textcheck16" value="Car">
+                        <input type="checkbox" id="textcheck16" name="textcheck16" >
                         <label  for="textcheck16">DDR4</label><br>
 
 
@@ -564,7 +499,7 @@
                 
                 <h2 class="subtitle" style="margin-left: 34px;">Обсяг памяті Гб</h2>
 
-                <div id="slider4"></div>
+                <div id="slider4" class="slider"></div>
 
                 <div class="slider-inputs">
                     <input type="number" id="input-left4" step="2" min="2" max="32" style="margin-left: 20px; margin-top: 20px;text-align: center;">
@@ -642,12 +577,12 @@
                 <form >
                     
                     <div class="checkboxesmenu">
-                        <input  type="checkbox" id="textcheck18" name="textcheck18" value="Bike">
+                        <input  type="checkbox" id="textcheck18" name="textcheck18" >
                         <label for="textcheck18"> SSD</label><br>
 
                     </div>
                     <div class="checkboxesmenu">
-                        <input type="checkbox" id="textcheck19" name="textcheck19" value="Car">
+                        <input type="checkbox" id="textcheck19" name="textcheck19" >
                         <label  for="textcheck19">HDD</label><br>
 
                     </div>
@@ -666,7 +601,7 @@
                 
                 <h2 class="subtitle" style="margin-left: 34px;">Обсяг памяті Гб</h2>
 
-                <div id="slider5"></div>
+                <div id="slider5" class="slider"></div>
 
                 <div class="slider-inputs">
                     <input type="number" id="input-left5" step="128" min="128" max="4000" style="margin-left: 20px; margin-top: 20px;text-align: center;">
@@ -723,22 +658,22 @@
                 <form >
                     
                     <div class="checkboxesmenu">
-                        <input  type="checkbox" id="textcheck20" name="textcheck20" value="Bike">
+                        <input  type="checkbox" id="textcheck20" name="textcheck20" >
                         <label for="textcheck20"> Windows 10</label><br>
 
                     </div>
                     <div class="checkboxesmenu">
-                        <input type="checkbox" id="textcheck21" name="textcheck21" value="Car">
+                        <input type="checkbox" id="textcheck21" name="textcheck21" >
                         <label  for="textcheck21">Windows 11</label><br>
 
                     </div>
                     <div class="checkboxesmenu">
-                        <input type="checkbox" id="textcheck22" name="textcheck22" value="Car">
+                        <input type="checkbox" id="textcheck22" name="textcheck22" >
                         <label  for="textcheck22">Ubuntu</label><br>
 
                     </div>
                     <div class="checkboxesmenu">
-                        <input type="checkbox" id="textcheck23" name="textcheck23" value="Car">
+                        <input type="checkbox" id="textcheck23" name="textcheck23" >
                         <label  for="textcheck23">Без ОС</label><br>
 
                     </div>
@@ -761,7 +696,7 @@
                 
                 <h2 class="subtitle" style="margin-left: 34px;">Діагональ екрану</h2>
         
-                <div id="slider6"></div>
+                <div id="slider6" class="slider"></div>
         
                 <div class="slider-inputs">
                     <input type="number" id="input-left6" step="1" min="10" max="35" style="margin-left: 20px; margin-top: 20px;text-align: center;">
@@ -812,23 +747,23 @@
                 </h2>
                 <form >
                     <div class="checkboxesmenu">
-                        <input  type="checkbox" id="textcheck24" name="textcheck24" value="Bike">
+                        <input  type="checkbox" id="textcheck24" name="textcheck24" >
                         <label for="textcheck24"> HD</label><br>
 
                     </div>
                     <div class="checkboxesmenu">
-                        <input type="checkbox" id="textcheck25" name="textcheck25" value="Car">
+                        <input type="checkbox" id="textcheck25" name="textcheck25" >
                         <label  for="textcheck25">HD+</label><br>
 
                     </div>
 
                     <div class="checkboxesmenu">
-                        <input  type="checkbox" id="textcheck26" name="textcheck26" value="Bike">
+                        <input  type="checkbox" id="textcheck26" name="textcheck26" >
                         <label for="textcheck26"> FHD</label><br>
 
                     </div>
                     <div class="checkboxesmenu">
-                        <input type="checkbox" id="textcheck27" name="textcheck27" value="Car">
+                        <input type="checkbox" id="textcheck27" name="textcheck27" >
                         <label  for="textcheck27">WUXGA</label><br>
 
                     </div>
@@ -850,7 +785,7 @@
             
             <h2 class="subtitle" style="margin-left: 34px;">Частота оновлення</h2>
 
-            <div id="slider7"></div>
+            <div id="slider7" class="slider"></div>
 
             <div class="slider-inputs">
                 <input type="number" id="input-left7" step="1" min="60" max="360" style="margin-left: 20px; margin-top: 20px;text-align: center;">
@@ -901,12 +836,12 @@
             </h2>
             <form >
                 <div class="checkboxesmenu">
-                    <input  type="checkbox" id="textcheck28" name="textcheck28" value="Bike">
+                    <input  type="checkbox" id="textcheck28" name="textcheck28" >
                     <label for="textcheck28"> Глянцеве</label><br>
 
                 </div>
                 <div class="checkboxesmenu">
-                    <input type="checkbox" id="textcheck29" name="textcheck29" value="Car">
+                    <input type="checkbox" id="textcheck29" name="textcheck29" >
                     <label  for="textcheck29">Матове</label><br>
 
                 </div>
@@ -935,18 +870,18 @@
             </h2>
             <form >
                 <div class="checkboxesmenu">
-                    <input  type="checkbox" id="textcheck30" name="textcheck30" value="Bike">
+                    <input  type="checkbox" id="textcheck30" name="textcheck30" >
                     <label for="textcheck30"> Пластик</label><br>
 
                 </div>
                 <div class="checkboxesmenu">
-                    <input type="checkbox" id="textcheck31" name="textcheck31" value="Car">
+                    <input type="checkbox" id="textcheck31" name="textcheck31" >
                     <label  for="textcheck31">Метал</label><br>
 
                 </div>
 
                 <div class="checkboxesmenu">
-                    <input  type="checkbox" id="textcheck32" name="textcheck32" value="Bike">
+                    <input  type="checkbox" id="textcheck32" name="textcheck32" >
                     <label for="textcheck32">Метал+Пластик</label><br>
 
                 </div>
@@ -962,7 +897,7 @@
             
             <h2 class="subtitle" style="margin-left: 34px;">Ємність</h2>
     
-            <div id="slider8"></div>
+            <div id="slider8" class="slider"></div>
     
             <div class="slider-inputs">
                 <input type="number" id="input-left8" step="1" min="10" max="35" style="margin-left: 20px; margin-top: 20px;text-align: center;">
@@ -1017,7 +952,7 @@
             
             <h2 class="subtitle" style="margin-left: 34px;">Час роботи</h2>
     
-            <div id="slider9"></div>
+            <div id="slider9" class="slider"></div>
     
             <div class="slider-inputs">
                 <input type="number" id="input-left9" step="1" min="10" max="35" style="margin-left: 20px; margin-top: 20px;text-align: center;">
@@ -1157,7 +1092,7 @@
                     <div class="">
                         <img src="5.svg" alt="">
                     </div>
-                    <div class="buttnprod">
+                    <div class="buttnprod"> 
                         <img src="heart.svg" alt="">
                         <img src="compare.svg" alt="">
                     </div>

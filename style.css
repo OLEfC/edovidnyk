@@ -13,7 +13,6 @@ body {
 
 .headnav {
     background-color: #FEAEAE;
-
 }
 
 .headnav nav {
@@ -22,7 +21,6 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 70px;
-    width:100%;
 }
 
 .headnav li {
@@ -46,11 +44,20 @@ body {
     font-size: 24px;
     display: flex;
 }
+.headnav li:hover {
+  background-color: #d3a3a3; /* Змініть колір на бажаний */
+}
+.headnav a {
+  text-decoration: none;
+}
 
 .searchnav .centered {
     font-size: 48px;
     text-align: center;
     padding-top: 57px;
+    padding-bottom: 57px;
+
+    
     
 }
 
@@ -58,6 +65,7 @@ body {
     flex-shrink: 0;
     background-color: #FFCFB2;
     align-items: center;
+    
 }
 
 .round {
@@ -128,7 +136,9 @@ body {
     width: 750px;
     vertical-align: top;
 }
-
+.photoproddiv{
+  background-color:#fff;
+}
 
 
 
@@ -144,8 +154,8 @@ body {
 .prodbutton{
     width: 25px;
     position: relative;
-    bottom: 250px;
-    right: 15px;
+    bottom: 240px;
+    right: 10px;
     z-index: 2;
     margin-left: 5%;
    margin-left: 90%;
@@ -280,7 +290,18 @@ body.logform {
     display: contents;
     margin: 10px;
     border: 3px solid #FFCFB2;
+    width:100%;
 
+}
+.maincompare{
+  
+    
+    margin: 10px;
+    width:80%;
+    display:flex;
+    display: flex;
+    align-items: center;
+    
 }
 
 .comparelistelement {
@@ -382,7 +403,8 @@ body.logform {
   
   /* Стилі для текстових полів вводу */
   input[type="text"],
-  input[type="password"] {
+  input[type="password"],
+  input[type="email"] {
     padding: 5px;
     margin-bottom: 10px;
     border-radius: 100px;
@@ -392,7 +414,7 @@ body.logform {
   /* Стилі для великої кнопки */
   .bigbtn {
     border-radius: 100px;
-
+    
     margin-top: 15px;
     padding: 10px;
     cursor: pointer;
@@ -467,6 +489,32 @@ align-items: center;
 }
 
 
+.deleteproductform{
+  display: flex; /* Встановлюємо flex контейнер */
+}
+.deleteproductone {
+  display: flex; /* Встановлюємо flex контейнер */
+  justify-content: center; /* Вирівнюємо елементи по горизонталі в центр */
+  align-items: center; /* Вирівнюємо елементи по вертикалі в центр */
+
+  float:right;
+  margin: 10px;
+  width: 200px;
+  height: 50px;
+  flex-shrink: 0;
+  color: #FFF;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background: #AE1E41;
+}
+
+.deleteproduct img {
+  margin-right: 5px; /* Задаємо відступ праворуч від зображення, щоб відокремити від тексту */
+  width: 20px;
+}
 
 
 
@@ -645,15 +693,15 @@ input[type="checkbox"]:checked + label::before {
   margin-left: 34px;
   margin-top: 30px;
   width: 250px;
-height: 100px;
-flex-shrink: 0;
-background: #A65A83;
-color: #FFF;
-font-family: Inter;
-font-size: 40px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+  height: 100px;
+  flex-shrink: 0;
+  background: #A65A83;
+  color: #FFF;
+  font-family: Inter;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .leftmenu{
@@ -1052,4 +1100,58 @@ margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.panel-body{
+  width: 1500px;
+}
+#commentText{
+  font-size: 20px;
+  display: flex;
+  width: 90%;
+  margin-left: 5%;
+  background: #F9EEEB;
+  margin-bottom: 26px;
+
+}
+
+#publishButton{
+  font-size: 40px;
+  text-align: center;
+  border-radius: 50px;
+  background: #A65A83;
+  margin-left: 33%;
+  width: 30%;
+  
+  align-items: center;
+
+}
+
+.pb-cmnt-container {
+  font-family: Lato;
+  margin-top: 100px;
+}
+
+.pb-cmnt-textarea {
+  resize: none;
+  padding: 20px;
+  height: 130px;
+  width: 100%;
+  border: 1px solid #F2F2F2;
+}
+
+.comment {
+  margin-top:15px;
+  font-size: 30px;
+  margin-left: 80px;
+  width: 1000px;
+}
+.comment span{
+  width: 1000px;
+}
+.delete-button {
+  background-color: #ff0000;
+  color: #fff;
+  padding: 5px 10px;
+  cursor: pointer;
 }
