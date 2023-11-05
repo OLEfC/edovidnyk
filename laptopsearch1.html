@@ -713,6 +713,370 @@
 
 
 
+            <h1 class="searchtitle">
+                Екран
+            </h1>
+
+            
+            <div>
+                
+                <h2 class="subtitle" style="margin-left: 34px;">Діагональ екрану</h2>
+        
+                <div id="slider6" class="slider"></div>
+        
+                <div class="slider-inputs">
+                    <input type="number" id="input-left6" step="1" min="10" max="35" style="margin-left: 20px; margin-top: 20px;text-align: center;">
+                    <input type="number" id="input-right6" step="1" min="10" max="35" style="margin-left: 110px; margin-top: 20px; text-align: center;">
+                </div>
+        
+                <script src="https://cdn.jsdelivr.net/npm/nouislider@14/distribute/nouislider.min.js"></script>
+                <script>
+                    var slider6 = document.getElementById('slider6');
+                    var inputLeft6 = document.getElementById('input-left6');
+                    var inputRight6 = document.getElementById('input-right6');
+                    var step = 1; // Change this value to set the step
+        
+                    noUiSlider.create(slider6, {
+                        start: [10, 35],
+                        connect: true,
+                        range: {
+                            'min': 10,
+                            'max': 35
+                        },
+                        step: step
+                    });
+        
+                    slider6.noUiSlider.on('update', function (values, handle) {
+                        var value = values[handle];
+                        if (handle) {
+                            inputRight6.value = parseInt(value) ;
+                        } else {
+                            inputLeft6.value = parseInt(value);
+                        }
+                    });
+        
+                    inputLeft6.addEventListener('change', function () {
+                        var value = this.value;
+                        slider6.noUiSlider.set([value, null]);
+                    });
+        
+                    inputRight6.addEventListener('change', function () {
+                        var value = this.value;
+                        slider6.noUiSlider.set([null, value]);
+                    });
+                </script>
+        
+            </div>
+            <div class="checkboxes">
+                <h2 сlass="subtitle">
+                     Роздільна здатність
+                </h2>
+                <form >
+                    <div class="checkboxesmenu">
+                        <input  type="checkbox" id="textcheck24" name="textcheck24" >
+                        <label for="textcheck24"> HD</label><br>
+
+                    </div>
+                    <div class="checkboxesmenu">
+                        <input type="checkbox" id="textcheck25" name="textcheck25" >
+                        <label  for="textcheck25">HD+</label><br>
+
+                    </div>
+
+                    <div class="checkboxesmenu">
+                        <input  type="checkbox" id="textcheck26" name="textcheck26" >
+                        <label for="textcheck26"> FHD</label><br>
+
+                    </div>
+                    <div class="checkboxesmenu">
+                        <input type="checkbox" id="textcheck27" name="textcheck27" >
+                        <label  for="textcheck27">WUXGA</label><br>
+
+                    </div>
+                    
+                   
+        
+                   
+                </form>
+
+            </div>
+
+
+            
+       
+       
+
+
+        <div>
+            
+            <h2 class="subtitle" style="margin-left: 34px;">Частота оновлення</h2>
+
+            <div id="slider7" class="slider"></div>
+
+            <div class="slider-inputs">
+                <input type="number" id="input-left7" step="1" min="60" max="360" style="margin-left: 20px; margin-top: 20px;text-align: center;">
+                <input type="number" id="input-right7" step="1" min="60" max="360" style="margin-left: 110px; margin-top: 20px; text-align: center;">
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/nouislider@14/distribute/nouislider.min.js"></script>
+            <script>
+                var slider7 = document.getElementById('slider7');
+                var inputLeft7 = document.getElementById('input-left7');
+                var inputRight7 = document.getElementById('input-right7');
+                var step = 1; // Change this value to set the step
+
+                noUiSlider.create(slider7, {
+                    start: [60, 360],
+                    connect: true,
+                    range: {
+                        'min': 60,
+                        'max': 360
+                    },
+                    step: step
+                });
+
+                slider7.noUiSlider.on('update', function (values, handle) {
+                    var value = values[handle];
+                    if (handle) {
+                        inputRight7.value = parseInt(value) ;
+                    } else {
+                        inputLeft7.value = parseInt(value);
+                    }
+                });
+
+                inputLeft7.addEventListener('change', function () {
+                    var value = this.value;
+                    slider7.noUiSlider.set([value, null]);
+                });
+
+                inputRight7.addEventListener('change', function () {
+                    var value = this.value;
+                    slider7.noUiSlider.set([null, value]);
+                });
+            </script>
+        </div>
+
+        <div class="checkboxes">
+            <h2 сlass="subtitle">
+                 Тип покриття
+            </h2>
+            <form >
+                <div class="checkboxesmenu">
+                    <input  type="checkbox" id="textcheck28" name="textcheck28" >
+                    <label for="textcheck28"> Глянцеве</label><br>
+
+                </div>
+                <div class="checkboxesmenu">
+                    <input type="checkbox" id="textcheck29" name="textcheck29" >
+                    <label  for="textcheck29">Матове</label><br>
+
+                </div>
+
+              
+                
+               
+    
+               
+            </form>
+
+        </div>
+
+
+
+
+        <h1 class="searchtitle">
+            Корпус
+        </h1>
+
+        
+        
+        <div class="checkboxes">
+            <h2 сlass="subtitle">
+                 Матеріал корпусу
+            </h2>
+            <form >
+                <div class="checkboxesmenu">
+                    <input  type="checkbox" id="textcheck30" name="textcheck30" >
+                    <label for="textcheck30"> Пластик</label><br>
+
+                </div>
+                <div class="checkboxesmenu">
+                    <input type="checkbox" id="textcheck31" name="textcheck31" >
+                    <label  for="textcheck31">Метал</label><br>
+
+                </div>
+
+                <div class="checkboxesmenu">
+                    <input  type="checkbox" id="textcheck32" name="textcheck32" >
+                    <label for="textcheck32">Метал+Пластик</label><br>
+
+                </div>
+                
+               
+    
+               
+            </form>
+
+        </div>
+
+        <div>
+            
+            <h2 class="subtitle" style="margin-left: 34px;">Ємність</h2>
+    
+            <div id="slider8" class="slider"></div>
+    
+            <div class="slider-inputs">
+                <input type="number" id="input-left8" step="1" min="10" max="35" style="margin-left: 20px; margin-top: 20px;text-align: center;">
+                <input type="number" id="input-right8" step="1" min="10" max="35" style="margin-left: 110px; margin-top: 20px; text-align: center;">
+            </div>
+    
+            <script src="https://cdn.jsdelivr.net/npm/nouislider@14/distribute/nouislider.min.js"></script>
+            <script>
+                var slider8 = document.getElementById('slider8');
+                var inputLeft8 = document.getElementById('input-left8');
+                var inputRight8 = document.getElementById('input-right8');
+                var step = 1; // Change this value to set the step
+    
+                noUiSlider.create(slider8, {
+                    start: [10, 35],
+                    connect: true,
+                    range: {
+                        'min': 10,
+                        'max': 35
+                    },
+                    step: step
+                });
+    
+                slider8.noUiSlider.on('update', function (values, handle) {
+                    var value = values[handle];
+                    if (handle) {
+                        inputRight8.value = parseInt(value) ;
+                    } else {
+                        inputLeft8.value = parseInt(value);
+                    }
+                });
+    
+                inputLeft8.addEventListener('change', function () {
+                    var value = this.value;
+                    slider8.noUiSlider.set([value, null]);
+                });
+    
+                inputRight8.addEventListener('change', function () {
+                    var value = this.value;
+                    slider8.noUiSlider.set([null, value]);
+                });
+            </script>
+    
+        </div>
+
+        <h1 class="searchtitle">
+            Акумулятор
+        </h1>
+
+
+        <div>
+            
+            <h2 class="subtitle" style="margin-left: 34px;">Час роботи</h2>
+    
+            <div id="slider9" class="slider"></div>
+    
+            <div class="slider-inputs">
+                <input type="number" id="input-left9" step="1" min="10" max="35" style="margin-left: 20px; margin-top: 20px;text-align: center;">
+                <input type="number" id="input-right9" step="1" min="10" max="35" style="margin-left: 110px; margin-top: 20px; text-align: center;">
+            </div>
+    
+            <script src="https://cdn.jsdelivr.net/npm/nouislider@14/distribute/nouislider.min.js"></script>
+            <script>
+                var slider9 = document.getElementById('slider9');
+                var inputLeft9 = document.getElementById('input-left9');
+                var inputRight9 = document.getElementById('input-right9');
+                var step = 1; // Change this value to set the step
+    
+                noUiSlider.create(slider9, {
+                    start: [10, 35],
+                    connect: true,
+                    range: {
+                        'min': 10,
+                        'max': 35
+                    },
+                    step: step
+                });
+    
+                slider9.noUiSlider.on('update', function (values, handle) {
+                    var value = values[handle];
+                    if (handle) {
+                        inputRight9.value = parseInt(value) ;
+                    } else {
+                        inputLeft9.value = parseInt(value);
+                    }
+                });
+    
+                inputLeft9.addEventListener('change', function () {
+                    var value = this.value;
+                    slider9.noUiSlider.set([value, null]);
+                });
+    
+                inputRight9.addEventListener('change', function () {
+                    var value = this.value;
+                    slider9.noUiSlider.set([null, value]);
+                });
+            </script>
+    
+        </div>
+
+
+        <div>
+            
+            <h2 class="subtitle" style="margin-left: 34px;">Вага</h2>
+    
+            <div id="slider10"></div>
+    
+            <div class="slider-inputs">
+                <input type="number" id="input-left10" step="1" min="10" max="35" style="margin-left: 20px; margin-top: 20px;text-align: center;">
+                <input type="number" id="input-right10" step="1" min="10" max="35" style="margin-left: 110px; margin-top: 20px; text-align: center;">
+            </div>
+    
+            <script src="https://cdn.jsdelivr.net/npm/nouislider@14/distribute/nouislider.min.js"></script>
+            <script>
+                var slider10 = document.getElementById('slider10');
+                var inputLeft10 = document.getElementById('input-left10');
+                var inputRight10 = document.getElementById('input-right10');
+                var step = 1; // Change this value to set the step
+    
+                noUiSlider.create(slider10, {
+                    start: [10, 35],
+                    connect: true,
+                    range: {
+                        'min': 10,
+                        'max': 35
+                    },
+                    step: step
+                });
+    
+                slider10.noUiSlider.on('update', function (values, handle) {
+                    var value = values[handle];
+                    if (handle) {
+                        inputRight10.value = parseInt(value) ;
+                    } else {
+                        inputLeft10.value = parseInt(value);
+                    }
+                });
+    
+                inputLeft10.addEventListener('change', function () {
+                    var value = this.value;
+                    slider10.noUiSlider.set([value, null]);
+                });
+    
+                inputRight10.addEventListener('change', function () {
+                    var value = this.value;
+                    slider10.noUiSlider.set([null, value]);
+                });
+            </script>
+    
+        </div>
+
+
+
 
 
 

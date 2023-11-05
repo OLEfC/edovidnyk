@@ -5,24 +5,7 @@
     <title>Єдовідник</title> 
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
-    <script>
-        // Видалення всіх товарів
-        document.querySelector('.deleteproduct').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector('.comparelist').innerHTML = '';
-        });
-    
-        // Видалення конкретного товару
-        let deleteButtons = document.querySelectorAll('.deleteproductone');
-        deleteButtons.forEach(function(button) {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                this.closest('.comparelistelement').remove();
-            });
-        });
-    </script>
-    
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body class="compare" >
     <header>
@@ -45,8 +28,8 @@
         </div>
     </header>
 
-    <form class="compareform" action="search.html">
-        <button class="addproduct" type="submit">+ Додати товар </button>
+    
+        <button class="addproduct" type="submit" onclick="window.location.href='search.html'">+ Додати товар </button>
         <button class="deleteproduct"><img src="trash.png">Видалити усі товари</button>
     </form>
 
@@ -67,7 +50,7 @@
 
                 </div>
                
-                <form class="deleteproductform" action="search.html">
+                
                     <button class="deleteproductone"><img src="trash.png">Видалити товар</button>
                 </form>
             </div>
@@ -83,7 +66,7 @@
                     <h1>Процесор AMD Ryzen 5 7600X</h1>
 
                 </div>
-                <form class="deleteproductform" action="search.html">
+                
                     <button class="deleteproductone"><img src="trash.png">Видалити товар</button>
                 </form>
 
@@ -99,23 +82,32 @@
                     <h1>Відеокарта Gigabyte RTX 3060 Gaming OC 12GB</h1>
 
                 </div>
-                
-
-                <form class="deleteproductform" action="search.html">
                     <button class="deleteproductone"><img src="trash.png">Видалити товар</button>
                 </form>
             </div>
             
-            
-
-            
-
         </div>
-
-
     </main>
-
-    
-    
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Видалення всіх товарів
+            document.querySelector('.deleteproduct').addEventListener('click', function(e) {
+                e.preventDefault();
+                var compareList = document.querySelector('.comparelist');
+                while (compareList.firstChild) {
+                    compareList.removeChild(compareList.firstChild);
+                }
+            });
+        
+            // Видалення конкретного товару
+            let deleteButtons = document.querySelectorAll('.deleteproductone');
+            deleteButtons.forEach(function(button) {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    this.closest('.comparelistelement').remove();
+                });
+            });
+        });
+    </script>
 </body>
 </html>

@@ -1,6 +1,49 @@
 /* Підключаємо шрифт Inter Regular */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
+input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 180px;
+  padding: 0.5em;
+  border: 1.5px solid #0f0202;
+  border-radius: 20px;
+}
 
+#toggleMemoryTypeButton {
+  background-color: transparent;
+  border:none;
+}
+#toggleMemoryTypeButton1 {
+  background-color: transparent;
+  border:none;
+  margin-left: 20px;
+}
+#toggleMemoryTypeButton2 {
+  background-color: transparent;
+  border:none;
+  
+}
+
+#toggleMemoryTypeButton3 {
+  background-color: transparent;
+  border:none;
+}
+#extraMemoryTypeCheck1,
+#extraMemoryTypeCheck2,
+#extraMemoryTypeCheck3 {
+    margin-left: 34px;
+}
+#extraMemoryTypeCheck9,
+#extraMemoryTypeCheck10,
+#extraMemoryTypeCheck11 {
+    margin-left: 34px;
+}
+#extraMemoryTypeCheck7,
+#extraMemoryTypeCheck8,
+#extraMemoryTypeCheck6 {
+    margin-left: 34px;
+}
 body {
     font-family: 'Inter', sans-serif;
     list-style-type: none;
